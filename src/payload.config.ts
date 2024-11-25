@@ -71,6 +71,15 @@ export default buildConfig({
     ...plugins,
     // storage-adapter-placeholder
   ],
+  endpoints: [
+    {
+      path: '/health',
+      method: 'get',
+      handler: async (req) => {
+        return new Response('OK', { status: 200 });
+      }
+    }
+  ],
   secret: process.env.PAYLOAD_SECRET,
   sharp,
   typescript: {
