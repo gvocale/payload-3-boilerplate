@@ -16,7 +16,7 @@ export const image4: Omit<Media, 'createdAt' | 'id' | 'updatedAt'> = {
               mode: 'normal',
               style: '',
               text: 'Graphic by ',
-              version: 1
+              version: 1,
             },
             {
               type: 'link',
@@ -28,18 +28,18 @@ export const image4: Omit<Media, 'createdAt' | 'id' | 'updatedAt'> = {
                   mode: 'normal',
                   style: '',
                   text: 'FUNKYTON',
-                  version: 1
-                }
+                  version: 1,
+                },
               ],
               direction: 'ltr',
               fields: {
                 linkType: 'custom',
                 newTab: true,
-                url: 'https://funkyton.com/vendure-tutorial/'
+                url: 'https://funkyton.com/vendure-tutorial/',
               },
               format: '',
               indent: 0,
-              version: 2
+              version: 2,
             },
             {
               type: 'text',
@@ -48,7 +48,7 @@ export const image4: Omit<Media, 'createdAt' | 'id' | 'updatedAt'> = {
               mode: 'normal',
               style: '',
               text: ' on ',
-              version: 1
+              version: 1,
             },
             {
               type: 'link',
@@ -60,18 +60,18 @@ export const image4: Omit<Media, 'createdAt' | 'id' | 'updatedAt'> = {
                   mode: 'normal',
                   style: '',
                   text: 'FUNKYTON',
-                  version: 1
-                }
+                  version: 1,
+                },
               ],
               direction: 'ltr',
               fields: {
                 linkType: 'custom',
                 newTab: true,
-                url: 'https://res-1.cloudinary.com/hczpmiapo/image/upload/q_auto/v1/ghost-blog-images/vendure-cover.png'
+                url: 'https://res-1.cloudinary.com/hczpmiapo/image/upload/q_auto/v1/ghost-blog-images/vendure-cover.png',
               },
               format: '',
               indent: 0,
-              version: 2
+              version: 2,
             },
             {
               type: 'text',
@@ -80,20 +80,20 @@ export const image4: Omit<Media, 'createdAt' | 'id' | 'updatedAt'> = {
               mode: 'normal',
               style: '',
               text: '.',
-              version: 1
-            }
+              version: 1,
+            },
           ],
           direction: 'ltr',
           format: '',
           indent: 0,
           textFormat: 0,
-          version: 1
-        }
+          version: 1,
+        },
       ],
       direction: 'ltr',
       format: '',
       indent: 0,
-      version: 1
-    }
-  }
+      version: 1,
+    },
+  },
 }

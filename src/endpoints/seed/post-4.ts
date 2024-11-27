@@ -284,7 +284,7 @@ export const post4: Partial<Post> = {
           fields: {
             blockName: '',
             blockType: 'mediaBlock',
-            media: '{{IMAGE_2}}'
+            media: '{{IMAGE_1}}' // Changed from IMAGE_2 to IMAGE_1 to avoid using multiple images
           },
           format: '',
           version: 2

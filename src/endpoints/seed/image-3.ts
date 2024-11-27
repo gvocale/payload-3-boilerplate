@@ -1,7 +1,7 @@
 import type { Media } from '@/payload-types'
 
 export const image3: Omit<Media, 'createdAt' | 'id' | 'updatedAt'> = {
-  alt: 'Straight metallic shapes with an orange and blue gradient',
+  alt: 'Medusa 2.0 on railway Cover',
   caption: {
     root: {
       type: 'root',
@@ -15,8 +15,8 @@ export const image3: Omit<Media, 'createdAt' | 'id' | 'updatedAt'> = {
               format: 0,
               mode: 'normal',
               style: '',
-              text: 'Photo by ',
-              version: 1,
+              text: 'Graphic by ',
+              version: 1
             },
             {
               type: 'link',
@@ -27,19 +27,19 @@ export const image3: Omit<Media, 'createdAt' | 'id' | 'updatedAt'> = {
                   format: 0,
                   mode: 'normal',
                   style: '',
-                  text: 'Andrew Kliatskyi',
-                  version: 1,
-                },
+                  text: 'FUNKYTON',
+                  version: 1
+                }
               ],
               direction: 'ltr',
               fields: {
                 linkType: 'custom',
                 newTab: true,
-                url: 'https://unsplash.com/@kirp',
+                url: 'https://funkyton.com/medusajs-2-0-is-finally-here/'
               },
               format: '',
               indent: 0,
-              version: 2,
+              version: 2
             },
             {
               type: 'text',
@@ -47,21 +47,53 @@ export const image3: Omit<Media, 'createdAt' | 'id' | 'updatedAt'> = {
               format: 0,
               mode: 'normal',
               style: '',
-              text: ' on Unsplash.',
-              version: 1,
+              text: ' on ',
+              version: 1
             },
+            {
+              type: 'link',
+              children: [
+                {
+                  type: 'text',
+                  detail: 0,
+                  format: 0,
+                  mode: 'normal',
+                  style: '',
+                  text: 'FUNKYTON',
+                  version: 1
+                }
+              ],
+              direction: 'ltr',
+              fields: {
+                linkType: 'custom',
+                newTab: true,
+                url: 'https://res.cloudinary.com/hczpmiapo/image/upload/v1732743964/Medusa-2.0-official-release-deploy-on-railway-cover_a7knvp.png'
+              },
+              format: '',
+              indent: 0,
+              version: 2
+            },
+            {
+              type: 'text',
+              detail: 0,
+              format: 0,
+              mode: 'normal',
+              style: '',
+              text: '.',
+              version: 1
+            }
           ],
           direction: 'ltr',
           format: '',
           indent: 0,
           textFormat: 0,
-          version: 1,
-        },
+          version: 1
+        }
       ],
       direction: 'ltr',
       format: '',
       indent: 0,
-      version: 1,
-    },
-  },
+      version: 1
+    }
+  }
 }

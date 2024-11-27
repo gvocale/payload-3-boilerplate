@@ -1,7 +1,7 @@
 import type { Media } from '@/payload-types'
 
 export const image1: Omit<Media, 'createdAt' | 'id' | 'updatedAt'> = {
-  alt: 'Curving abstract shapes with an orange and blue gradient',
+  alt: 'Shirts',
   caption: {
     root: {
       type: 'root',
@@ -15,7 +15,7 @@ export const image1: Omit<Media, 'createdAt' | 'id' | 'updatedAt'> = {
               format: 0,
               mode: 'normal',
               style: '',
-              text: 'Photo by ',
+              text: 'Graphic by ',
               version: 1,
             },
             {
@@ -27,7 +27,7 @@ export const image1: Omit<Media, 'createdAt' | 'id' | 'updatedAt'> = {
                   format: 0,
                   mode: 'normal',
                   style: '',
-                  text: 'Andrew Kliatskyi',
+                  text: 'Payload',
                   version: 1,
                 },
               ],
@@ -35,20 +35,11 @@ export const image1: Omit<Media, 'createdAt' | 'id' | 'updatedAt'> = {
               fields: {
                 linkType: 'custom',
                 newTab: true,
-                url: 'https://unsplash.com/@kirp',
+                url: 'https://payloadcms.com/use-cases/headless-cms',
               },
               format: '',
               indent: 0,
               version: 2,
-            },
-            {
-              type: 'text',
-              detail: 0,
-              format: 0,
-              mode: 'normal',
-              style: '',
-              text: ' on Unsplash.',
-              version: 1,
             },
           ],
           direction: 'ltr',
