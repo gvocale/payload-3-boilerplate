@@ -1,7 +1,7 @@
 import type { Post } from '@/payload-types'
 
-export const post3: Partial<Post> = {
-  slug: 'medusajs-2-0-game-changer',
+export const post4: Partial<Post> = {
+  slug: 'vendure-open-source-ecommerce',
   _status: 'published',
   // @ts-ignore
   authors: ['{{AUTHOR}}'],
@@ -18,7 +18,7 @@ export const post3: Partial<Post> = {
               format: 0,
               mode: 'normal',
               style: '',
-              text: 'Discover the power of Medusa.js 2.0 and how it revolutionizes e-commerce development.',
+              text: 'Discover how Vendure can revolutionize your e-commerce development and deployment process.',
               version: 1
             }
           ],
@@ -118,7 +118,7 @@ export const post3: Partial<Post> = {
               format: 0,
               mode: 'normal',
               style: '',
-              text: "The e-commerce world is buzzing with excitement as Medusa.js 2.0 has officially been released! This major update brings a host of new features and improvements that are set to revolutionize how we build and manage online stores. In this post, we'll explore what's new in Medusa.js 2.0 and why it's a game-changer for developers and businesses alike.",
+              text: "In the ever-evolving world of e-commerce, finding the right platform can be a game-changer for your business. Today, we're excited to introduce you to Vendure, an open-source e-commerce solution that's been gaining traction in the developer community. Let's explore what makes Vendure stand out and how you can easily deploy it on Railway.",
               version: 1
             }
           ],
@@ -147,7 +147,7 @@ export const post3: Partial<Post> = {
               format: 0,
               mode: 'normal',
               style: '',
-              text: "What's New in Medusa.js 2.0?",
+              text: 'What is Vendure?',
               version: 1
             }
           ],
@@ -163,103 +163,10 @@ export const post3: Partial<Post> = {
             {
               type: 'text',
               detail: 0,
-              format: 1,
-              mode: 'normal',
-              style: '',
-              text: 'Reworked Admin Dashboard: ',
-              version: 1
-            },
-            {
-              type: 'text',
-              detail: 0,
               format: 0,
               mode: 'normal',
               style: '',
-              text: 'A more intuitive and visually appealing interface.',
-              version: 1
-            }
-          ],
-          direction: 'ltr',
-          format: '',
-          indent: 0,
-          textFormat: 0,
-          version: 1
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              detail: 0,
-              format: 1,
-              mode: 'normal',
-              style: '',
-              text: 'Enhanced Inventory Management: ',
-              version: 1
-            },
-            {
-              type: 'text',
-              detail: 0,
-              format: 0,
-              mode: 'normal',
-              style: '',
-              text: 'Support for multiple warehouses.',
-              version: 1
-            }
-          ],
-          direction: 'ltr',
-          format: '',
-          indent: 0,
-          textFormat: 0,
-          version: 1
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              detail: 0,
-              format: 1,
-              mode: 'normal',
-              style: '',
-              text: 'New Promotions Engine: ',
-              version: 1
-            },
-            {
-              type: 'text',
-              detail: 0,
-              format: 0,
-              mode: 'normal',
-              style: '',
-              text: 'More flexible and powerful discount configurations.',
-              version: 1
-            }
-          ],
-          direction: 'ltr',
-          format: '',
-          indent: 0,
-          textFormat: 0,
-          version: 1
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              detail: 0,
-              format: 1,
-              mode: 'normal',
-              style: '',
-              text: 'Improved Software Architecture: ',
-              version: 1
-            },
-            {
-              type: 'text',
-              detail: 0,
-              format: 0,
-              mode: 'normal',
-              style: '',
-              text: 'Easier customization and feature additions.',
+              text: 'Vendure is a headless e-commerce framework built with TypeScript and Node.js. It provides a solid foundation for any commerce application, including inventory management, orders, customers, taxes, promotions, and more. What sets Vendure apart is its focus on developer experience and extensibility.',
               version: 1
             }
           ],
@@ -278,7 +185,7 @@ export const post3: Partial<Post> = {
               format: 0,
               mode: 'normal',
               style: '',
-              text: 'Why Choose Medusa.js 2.0?',
+              text: 'Key Features of Vendure',
               version: 1
             }
           ],
@@ -294,10 +201,75 @@ export const post3: Partial<Post> = {
             {
               type: 'text',
               detail: 0,
+              format: 1,
+              mode: 'normal',
+              style: '',
+              text: 'Headless Architecture: ',
+              version: 1
+            },
+            {
+              type: 'text',
+              detail: 0,
               format: 0,
               mode: 'normal',
               style: '',
-              text: "Medusa.js 2.0 offers substantial improvements that benefit both business operations and development processes. Whether you're managing inventory or building custom features, this update provides tools that make your e-commerce journey smoother and more efficient.",
+              text: 'Allows for flexible front-end implementations',
+              version: 1
+            }
+          ],
+          direction: 'ltr',
+          format: '',
+          indent: 0,
+          textFormat: 0,
+          version: 1
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              detail: 0,
+              format: 1,
+              mode: 'normal',
+              style: '',
+              text: 'GraphQL API: ',
+              version: 1
+            },
+            {
+              type: 'text',
+              detail: 0,
+              format: 0,
+              mode: 'normal',
+              style: '',
+              text: 'Powerful and efficient data querying',
+              version: 1
+            }
+          ],
+          direction: 'ltr',
+          format: '',
+          indent: 0,
+          textFormat: 0,
+          version: 1
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              detail: 0,
+              format: 1,
+              mode: 'normal',
+              style: '',
+              text: 'Admin UI: ',
+              version: 1
+            },
+            {
+              type: 'text',
+              detail: 0,
+              format: 0,
+              mode: 'normal',
+              style: '',
+              text: 'Intuitive interface for managing your store',
               version: 1
             }
           ],
@@ -326,7 +298,7 @@ export const post3: Partial<Post> = {
               format: 0,
               mode: 'normal',
               style: '',
-              text: 'Deploy Medusa.js 2.0 on Railway',
+              text: 'Deploying Vendure on Railway',
               version: 1
             }
           ],
@@ -345,7 +317,7 @@ export const post3: Partial<Post> = {
               format: 0,
               mode: 'normal',
               style: '',
-              text: "To make it even easier to get started with Medusa.js 2.0, we've created a one-click deploy template for Railway. This template includes:",
+              text: "To make it easier for developers to get started with Vendure, we've created a one-click deploy template for Railway. This template sets up everything you need to run a Vendure store, including:",
               version: 1
             }
           ],
@@ -364,7 +336,7 @@ export const post3: Partial<Post> = {
               format: 1,
               mode: 'normal',
               style: '',
-              text: '• Automatic setup: ',
+              text: '• Complete Setup: ',
               version: 1
             },
             {
@@ -373,7 +345,7 @@ export const post3: Partial<Post> = {
               format: 0,
               mode: 'normal',
               style: '',
-              text: 'Storefront, Redis, and PostgreSQL database',
+              text: 'Vendure backend, admin dashboard, and storefront',
               version: 1
             }
           ],
@@ -392,7 +364,7 @@ export const post3: Partial<Post> = {
               format: 1,
               mode: 'normal',
               style: '',
-              text: '• API key sharing: ',
+              text: '• Built-in Features: ',
               version: 1
             },
             {
@@ -401,35 +373,7 @@ export const post3: Partial<Post> = {
               format: 0,
               mode: 'normal',
               style: '',
-              text: 'Automatic sharing between backend and storefront',
-              version: 1
-            }
-          ],
-          direction: 'ltr',
-          format: '',
-          indent: 0,
-          textFormat: 0,
-          version: 1
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              detail: 0,
-              format: 1,
-              mode: 'normal',
-              style: '',
-              text: '• Built-in features: ',
-              version: 1
-            },
-            {
-              type: 'text',
-              detail: 0,
-              format: 0,
-              mode: 'normal',
-              style: '',
-              text: 'Internal media storage, health checks, and automatic admin user creation',
+              text: 'Asset storage and pre-installed plugins for Stripe payment and Sendgrid email',
               version: 1
             }
           ],
@@ -448,7 +392,7 @@ export const post3: Partial<Post> = {
               format: 0,
               mode: 'normal',
               style: '',
-              text: 'Ready to get started? Check out our full guide on deploying Medusa.js 2.0 on Railway: ',
+              text: 'Ready to get started? Check out our full tutorial on deploying Vendure on Railway: ',
               version: 1
             },
             {
@@ -460,7 +404,7 @@ export const post3: Partial<Post> = {
                   format: 0,
                   mode: 'normal',
                   style: '',
-                  text: 'Medusa.js 2.0 Deployment Guide',
+                  text: 'Vendure Deployment Tutorial',
                   version: 1
                 }
               ],
@@ -468,7 +412,7 @@ export const post3: Partial<Post> = {
               fields: {
                 linkType: 'custom',
                 newTab: true,
-                url: 'https://funkyton.com/medusajs-2-0-is-finally-here/'
+                url: 'https://funkyton.com/vendure-tutorial/'
               },
               format: '',
               indent: 0,
@@ -490,7 +434,7 @@ export const post3: Partial<Post> = {
               format: 0,
               mode: 'normal',
               style: '',
-              text: 'For those who want to dive deeper into the code, you can find our Medusa.js 2.0 boilerplate on GitHub: ',
+              text: 'For those who want to explore the code, you can find our Vendure boilerplate on GitHub: ',
               version: 1
             },
             {
@@ -502,7 +446,7 @@ export const post3: Partial<Post> = {
                   format: 0,
                   mode: 'normal',
                   style: '',
-                  text: 'Medusa.js 2.0 Railway Boilerplate',
+                  text: 'Vendure Railway Boilerplate',
                   version: 1
                 }
               ],
@@ -510,11 +454,49 @@ export const post3: Partial<Post> = {
               fields: {
                 linkType: 'custom',
                 newTab: true,
-                url: 'https://github.com/rpuls/medusajs-2.0-for-railway-boilerplate'
+                url: 'https://github.com/rpuls/vendure-boilerplate'
               },
               format: '',
               indent: 0,
               version: 3
+            }
+          ],
+          direction: 'ltr',
+          format: '',
+          indent: 0,
+          textFormat: 0,
+          version: 1
+        },
+        {
+          type: 'heading',
+          children: [
+            {
+              type: 'text',
+              detail: 0,
+              format: 0,
+              mode: 'normal',
+              style: '',
+              text: 'Conclusion',
+              version: 1
+            }
+          ],
+          direction: 'ltr',
+          format: '',
+          indent: 0,
+          tag: 'h2',
+          version: 1
+        },
+        {
+          type: 'paragraph',
+          children: [
+            {
+              type: 'text',
+              detail: 0,
+              format: 0,
+              mode: 'normal',
+              style: '',
+              text: "Vendure offers a powerful, flexible solution for businesses looking to build or upgrade their e-commerce platform. With its focus on developer experience and extensibility, it's an excellent choice for teams that want to create unique, tailored shopping experiences. By leveraging our Railway template, you can have a Vendure store up and running in no time, allowing you to focus on what matters most - growing your business.",
+              version: 1
             }
           ],
           direction: 'ltr',
@@ -531,11 +513,11 @@ export const post3: Partial<Post> = {
     }
   },
   meta: {
-    description: 'Discover the power of Medusa.js 2.0 and how it revolutionizes e-commerce development.',
+    description: 'Discover how Vendure can revolutionize your e-commerce development and deployment process.',
     // @ts-ignore
     image: '{{IMAGE_1}}',
-    title: 'Medusa.js 2.0: A Game-Changer for E-commerce'
+    title: 'Vendure: A Powerful Open-Source E-commerce Solution'
   },
   relatedPosts: [], // this is populated by the seed script
-  title: 'Medusa.js 2.0: A Game-Changer for E-commerce'
+  title: 'Vendure: A Powerful Open-Source E-commerce Solution'
 }

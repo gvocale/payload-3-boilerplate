@@ -63,12 +63,12 @@ Use one-click deploy template:
 ### Local Setup
 
 1. Clone proejct: (recommeded) Laucnh on Railway and ejct [watch how](https://www.youtube.com/watch?v=LJFek8JP8TE). Alternatively clone this repo or fork it.
-2. Copy `.env.example` to `.env`
-3. Install dependencies: `pnpm install`
-4. Run development mode: `pnpm dev`
+2. Copy `.env.example` to `.env` (fill in your own values..)
+3. Install dependencies: `pnpm install` or `npm install`
+4. Run development mode: `pnpm dev` or `npm run dev`
 or
-5. Build the project: `pnpm run build`
-6. Start the server: `pnpm run start`
+5. Build the project: `pnpm build` or `npm run build`
+6. Start the server: `pnpm start` or `npm run start`
 
 
 ### Requirements

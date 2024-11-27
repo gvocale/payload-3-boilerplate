@@ -5,9 +5,11 @@ import { contact as contactPageData } from './contact-page'
 import { home } from './home'
 import { image1 } from './image-1'
 import { image2 } from './image-2'
+import { image4 } from './image-4'
 import { post1 } from './post-1'
 import { post2 } from './post-2'
 import { post3 } from './post-3'
+import { post4 } from './post-4'
 
 const collections: CollectionSlug[] = [
   'categories',
@@ -16,7 +18,7 @@ const collections: CollectionSlug[] = [
   'posts',
   'forms',
   'form-submissions',
-  'search',
+  'search'
 ]
 const globals: GlobalSlug[] = ['header', 'footer']
 
@@ -46,25 +48,36 @@ export const seed = async ({
     await payload.updateGlobal({
       slug: global,
       data: {
-        navItems: [],
-      },
+        navItems: []
+      }
     })
   }
 
-  for (const collection of collections) {
+  // First, clear the search collection to avoid ID conflicts
+  await payload.delete({
+    collection: 'search',
+    where: {
+      id: {
+        exists: true
+      }
+    }
+  })
+
+  // Then clear other collections
+  for (const collection of collections.filter(c => c !== 'search')) {
     await payload.delete({
       collection: collection,
       where: {
         id: {
-          exists: true,
-        },
-      },
+          exists: true
+        }
+      }
     })
   }
 
   const pages = await payload.delete({
     collection: 'pages',
-    where: {},
+    where: {}
   })
 
   payload.logger.info(`— Seeding demo author and user...`)
@@ -73,9 +86,9 @@ export const seed = async ({
     collection: 'users',
     where: {
       email: {
-        equals: 'demo-author@payloadcms.com',
-      },
-    },
+        equals: 'demo-author@payloadcms.com'
+      }
+    }
   })
 
   const demoAuthor = await payload.create({
@@ -83,101 +96,111 @@ export const seed = async ({
     data: {
       name: 'Demo Author',
       email: 'demo-author@payloadcms.com',
-      password: 'password',
-    },
+      password: 'password'
+    }
   })
 
   let demoAuthorID: number | string = demoAuthor.id
 
   payload.logger.info(`— Seeding media...`)
-  const [image1Buffer, image2Buffer, image3Buffer, hero1Buffer] = await Promise.all([
+  const [image1Buffer, image2Buffer, image3Buffer, hero1Buffer, vendureBuffer] = await Promise.all([
     fetchFileByURL(
-      'https://raw.githubusercontent.com/payloadcms/payload/refs/heads/main/templates/website/src/endpoints/seed/image-post1.webp',
+      'https://raw.githubusercontent.com/payloadcms/payload/refs/heads/main/templates/website/src/endpoints/seed/image-post1.webp'
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/payloadcms/payload/refs/heads/main/templates/website/src/endpoints/seed/image-post2.webp',
+      'https://raw.githubusercontent.com/payloadcms/payload/refs/heads/main/templates/website/src/endpoints/seed/image-post2.webp'
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/payloadcms/payload/refs/heads/main/templates/website/src/endpoints/seed/image-post3.webp',
+      'https://raw.githubusercontent.com/payloadcms/payload/refs/heads/main/templates/website/src/endpoints/seed/image-post3.webp'
     ),
     fetchFileByURL(
-      'https://raw.githubusercontent.com/payloadcms/payload/refs/heads/main/templates/website/src/endpoints/seed/image-hero1.webp',
+      'https://raw.githubusercontent.com/payloadcms/payload/refs/heads/main/templates/website/src/endpoints/seed/image-hero1.webp'
     ),
+    fetchFileByURL(
+      'https://res-1.cloudinary.com/hczpmiapo/image/upload/q_auto/v1/ghost-blog-images/vendure-cover.png'
+    )
   ])
 
   const image1Doc = await payload.create({
     collection: 'media',
     data: image1,
-    file: image1Buffer,
+    file: image1Buffer
   })
   const image2Doc = await payload.create({
     collection: 'media',
     data: image2,
-    file: image2Buffer,
+    file: image2Buffer
   })
   const image3Doc = await payload.create({
     collection: 'media',
     data: image2,
-    file: image3Buffer,
+    file: image3Buffer
   })
   const imageHomeDoc = await payload.create({
     collection: 'media',
     data: image2,
-    file: hero1Buffer,
+    file: hero1Buffer
+  })
+  const image4Doc = await payload.create({
+    collection: 'media',
+    data: image4,
+    file: vendureBuffer
   })
 
   payload.logger.info(`— Seeding categories...`)
   const technologyCategory = await payload.create({
     collection: 'categories',
     data: {
-      title: 'Technology',
-    },
+      title: 'Technology'
+    }
   })
 
   const newsCategory = await payload.create({
     collection: 'categories',
     data: {
-      title: 'News',
-    },
+      title: 'News'
+    }
   })
 
   const financeCategory = await payload.create({
     collection: 'categories',
     data: {
-      title: 'Finance',
-    },
+      title: 'Finance'
+    }
   })
 
   await payload.create({
     collection: 'categories',
     data: {
-      title: 'Design',
-    },
+      title: 'Design'
+    }
   })
 
   await payload.create({
     collection: 'categories',
     data: {
-      title: 'Software',
-    },
+      title: 'Software'
+    }
   })
 
   await payload.create({
     collection: 'categories',
     data: {
-      title: 'Engineering',
-    },
+      title: 'Engineering'
+    }
   })
 
   let image1ID: number | string = image1Doc.id
   let image2ID: number | string = image2Doc.id
   let image3ID: number | string = image3Doc.id
+  let image4ID: number | string = image4Doc.id
   let imageHomeID: number | string = imageHomeDoc.id
 
   if (payload.db.defaultIDType === 'text') {
     image1ID = `"${image1Doc.id}"`
     image2ID = `"${image2Doc.id}"`
     image3ID = `"${image3Doc.id}"`
+    image4ID = `"${image4Doc.id}"`
     imageHomeID = `"${imageHomeDoc.id}"`
     demoAuthorID = `"${demoAuthorID}"`
   }
@@ -192,8 +215,8 @@ export const seed = async ({
       JSON.stringify({ ...post1, categories: [technologyCategory.id] })
         .replace(/"\{\{IMAGE_1\}\}"/g, String(image1ID))
         .replace(/"\{\{IMAGE_2\}\}"/g, String(image2ID))
-        .replace(/"\{\{AUTHOR\}\}"/g, String(demoAuthorID)),
-    ),
+        .replace(/"\{\{AUTHOR\}\}"/g, String(demoAuthorID))
+    )
   })
 
   const post2Doc = await payload.create({
@@ -202,8 +225,8 @@ export const seed = async ({
       JSON.stringify({ ...post2, categories: [newsCategory.id] })
         .replace(/"\{\{IMAGE_1\}\}"/g, String(image2ID))
         .replace(/"\{\{IMAGE_2\}\}"/g, String(image3ID))
-        .replace(/"\{\{AUTHOR\}\}"/g, String(demoAuthorID)),
-    ),
+        .replace(/"\{\{AUTHOR\}\}"/g, String(demoAuthorID))
+    )
   })
 
   const post3Doc = await payload.create({
@@ -212,8 +235,18 @@ export const seed = async ({
       JSON.stringify({ ...post3, categories: [financeCategory.id] })
         .replace(/"\{\{IMAGE_1\}\}"/g, String(image3ID))
         .replace(/"\{\{IMAGE_2\}\}"/g, String(image1ID))
-        .replace(/"\{\{AUTHOR\}\}"/g, String(demoAuthorID)),
-    ),
+        .replace(/"\{\{AUTHOR\}\}"/g, String(demoAuthorID))
+    )
+  })
+
+  const post4Doc = await payload.create({
+    collection: 'posts',
+    data: JSON.parse(
+      JSON.stringify({ ...post4, categories: [technologyCategory.id] })
+        .replace(/"\{\{IMAGE_1\}\}"/g, String(image4ID))
+        .replace(/"\{\{IMAGE_2\}\}"/g, String(image4ID))
+        .replace(/"\{\{AUTHOR\}\}"/g, String(demoAuthorID))
+    )
   })
 
   // update each post with related posts
@@ -221,22 +254,29 @@ export const seed = async ({
     id: post1Doc.id,
     collection: 'posts',
     data: {
-      relatedPosts: [post2Doc.id, post3Doc.id],
-    },
+      relatedPosts: [post2Doc.id, post3Doc.id, post4Doc.id]
+    }
   })
   await payload.update({
     id: post2Doc.id,
     collection: 'posts',
     data: {
-      relatedPosts: [post1Doc.id, post3Doc.id],
-    },
+      relatedPosts: [post1Doc.id, post3Doc.id, post4Doc.id]
+    }
   })
   await payload.update({
     id: post3Doc.id,
     collection: 'posts',
     data: {
-      relatedPosts: [post1Doc.id, post2Doc.id],
-    },
+      relatedPosts: [post1Doc.id, post2Doc.id, post4Doc.id]
+    }
+  })
+  await payload.update({
+    id: post4Doc.id,
+    collection: 'posts',
+    data: {
+      relatedPosts: [post1Doc.id, post2Doc.id, post3Doc.id]
+    }
   })
 
   payload.logger.info(`— Seeding home page...`)
@@ -246,15 +286,15 @@ export const seed = async ({
     data: JSON.parse(
       JSON.stringify(home)
         .replace(/"\{\{IMAGE_1\}\}"/g, String(imageHomeID))
-        .replace(/"\{\{IMAGE_2\}\}"/g, String(image2ID)),
-    ),
+        .replace(/"\{\{IMAGE_2\}\}"/g, String(image2ID))
+    )
   })
 
   payload.logger.info(`— Seeding contact form...`)
 
   const contactForm = await payload.create({
     collection: 'forms',
-    data: JSON.parse(JSON.stringify(contactFormData)),
+    data: JSON.parse(JSON.stringify(contactFormData))
   })
 
   let contactFormID: number | string = contactForm.id
@@ -268,8 +308,8 @@ export const seed = async ({
   const contactPage = await payload.create({
     collection: 'pages',
     data: JSON.parse(
-      JSON.stringify(contactPageData).replace(/"\{\{CONTACT_FORM_ID\}\}"/g, String(contactFormID)),
-    ),
+      JSON.stringify(contactPageData).replace(/"\{\{CONTACT_FORM_ID\}\}"/g, String(contactFormID))
+    )
   })
 
   payload.logger.info(`— Seeding header...`)
@@ -282,8 +322,8 @@ export const seed = async ({
           link: {
             type: 'custom',
             label: 'Posts',
-            url: '/posts',
-          },
+            url: '/posts'
+          }
         },
         {
           link: {
@@ -291,12 +331,12 @@ export const seed = async ({
             label: 'Contact',
             reference: {
               relationTo: 'pages',
-              value: contactPage.id,
-            },
-          },
-        },
-      ],
-    },
+              value: contactPage.id
+            }
+          }
+        }
+      ]
+    }
   })
 
   payload.logger.info(`— Seeding footer...`)
@@ -309,27 +349,27 @@ export const seed = async ({
           link: {
             type: 'custom',
             label: 'Admin',
-            url: '/admin',
-          },
+            url: '/admin'
+          }
         },
         {
           link: {
             type: 'custom',
             label: 'Source Code',
             newTab: true,
-            url: 'https://github.com/payloadcms/payload/tree/main/templates/website',
-          },
+            url: 'https://github.com/payloadcms/payload/tree/main/templates/website'
+          }
         },
         {
           link: {
             type: 'custom',
             label: 'Payload',
             newTab: true,
-            url: 'https://payloadcms.com/',
-          },
-        },
-      ],
-    },
+            url: 'https://payloadcms.com/'
+          }
+        }
+      ]
+    }
   })
 
   payload.logger.info('Seeded database successfully!')
@@ -338,7 +378,7 @@ export const seed = async ({
 async function fetchFileByURL(url: string): Promise<File> {
   const res = await fetch(url, {
     credentials: 'include',
-    method: 'GET',
+    method: 'GET'
   })
 
   if (!res.ok) {
@@ -351,6 +391,6 @@ async function fetchFileByURL(url: string): Promise<File> {
     name: url.split('/').pop() || `file-${Date.now()}`,
     data: Buffer.from(data),
     mimetype: `image/${url.split('.').pop()}`,
-    size: data.byteLength,
+    size: data.byteLength
   }
 }
