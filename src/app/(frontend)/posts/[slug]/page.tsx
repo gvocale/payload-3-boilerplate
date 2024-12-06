@@ -7,6 +7,7 @@ import { getPayload } from 'payload'
 import { draftMode } from 'next/headers'
 import React, { cache } from 'react'
 import RichText from '@/components/RichText'
+import { Comments } from '@/components/Comments'
 
 import type { Post } from '@/payload-types'
 
@@ -64,6 +65,11 @@ export default async function Post({ params: paramsPromise }: Args) {
               docs={post.relatedPosts.filter((post) => typeof post === 'object')}
             />
           )}
+          
+          {/* Add Comments section */}
+          <div className="max-w-[48rem] mx-auto mt-16">
+            <Comments postID={typeof post.id === 'string' ? parseInt(post.id, 10) : post.id} />
+          </div>
         </div>
       </div>
     </article>
