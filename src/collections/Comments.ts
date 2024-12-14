@@ -5,16 +5,14 @@ import { authenticated } from '../access/authenticated'
 export const Comments: CollectionConfig = {
   slug: 'comments',
   admin: {
-    useAsTitle: 'content',
     defaultColumns: ['content', 'author', 'post', 'isApproved', 'createdAt'],
     description: 'Comments submitted by visitors on blog posts',
-    group: 'Content'
   },
   access: {
     read: authenticatedOrPublished,
-    create: () => true, // Anyone can create comments
-    update: authenticated, // Only authenticated users can update
-    delete: authenticated // Only authenticated users can delete
+    create: () => true,
+    update: authenticated,
+    delete: authenticated
   },
   fields: [
     {

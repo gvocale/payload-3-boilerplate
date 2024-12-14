@@ -6,7 +6,7 @@ import { Textarea } from '../ui/textarea'
 import { Input } from '../ui/input'
 import { Label } from '../ui/label'
 
-const CommentForm: React.FC<{ postID: number | string }> = ({ postID }) => {
+const CommentForm: React.FC<{ postId: number | string }> = ({ postId }) => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [content, setContent] = useState('')
@@ -21,9 +21,6 @@ const CommentForm: React.FC<{ postID: number | string }> = ({ postID }) => {
     setSuccess(false)
 
     try {
-      // Convert postID to number if it's a string
-      const numericPostID = typeof postID === 'string' ? parseInt(postID, 10) : postID
-
       const res = await fetch('/api/comments', {
         method: 'POST',
         headers: {
@@ -32,7 +29,7 @@ const CommentForm: React.FC<{ postID: number | string }> = ({ postID }) => {
         body: JSON.stringify({
           content,
           author: { name, email },
-          post: numericPostID,
+          post: postId,
         }),
       })
 

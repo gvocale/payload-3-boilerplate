@@ -5,21 +5,18 @@ import type { Comment } from '../../payload-types'
 import CommentForm from './CommentForm'
 
 type Props = {
-  postID: number | string
+  postId: number | string
   className?: string
 }
 
-export const Comments: React.FC<Props> = async ({ postID, className }) => {
-  // Convert postID to number if it's a string
-  const numericPostID = typeof postID === 'string' ? parseInt(postID, 10) : postID
+export const Comments: React.FC<Props> = async ({ postId, className }) => {
 
-  // Fetch comments using Payload's Local API
   const payload = await getPayload({ config: configPromise })
   const { docs: comments } = await payload.find({
     collection: 'comments',
     where: {
       post: {
-        equals: numericPostID,
+        equals: postId,
       },
       isApproved: {
         equals: true,
@@ -50,7 +47,7 @@ export const Comments: React.FC<Props> = async ({ postID, className }) => {
       </div>
 
       {/* Comment form */}
-      <CommentForm postID={postID} />
+      <CommentForm postId={postId} />
     </div>
   )
 }
